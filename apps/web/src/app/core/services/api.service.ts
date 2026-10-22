@@ -8,8 +8,9 @@ import { environment } from "@config/environment.development";
 })
 
 export class ApiService {
-  protected http = inject(HttpClient);
-  protected apiUrl = environment.apiUrl;
+  
+  private readonly http = inject(HttpClient);
+  private readonly apiUrl = environment.apiUrl;
 
   get<T>(url: string) {
     return this.http.get<T>(`${this.apiUrl}/${url}`);

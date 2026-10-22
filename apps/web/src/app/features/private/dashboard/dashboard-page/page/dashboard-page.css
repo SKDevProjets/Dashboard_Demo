@@ -1,0 +1,87 @@
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================================
+   DASHBOARD LAYOUT
+========================================================= */
+
+.dashboard-content {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================================
+   CLIENTS CONTENT CARD
+========================================================= */
+
+.content-card {
+  height: 100%;
+  min-width: 0;
+  padding: 22px;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 50px rgba(60, 45, 35, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  transition: box-shadow 0.2s ease;
+}
+
+.content-card:hover {
+  box-shadow:
+    0 24px 55px rgba(60, 45, 35, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   DASHBOARD FOOTER
+========================================================= */
+
+.dashboard-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  padding: 20px 4px 0;
+
+  color: var(--color-muted, #81776f);
+  font-size: 10px;
+}
+
+.dashboard-footer i {
+  margin-left: 4px;
+  color: #43a879;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+  .content-card {
+    padding: 18px;
+  }
+
+  .dashboard-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-card {
+    transition: none;
+  }
+}

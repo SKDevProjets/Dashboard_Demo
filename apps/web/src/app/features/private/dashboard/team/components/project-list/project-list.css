@@ -1,0 +1,74 @@
+:host {
+    display: block;
+    min-width: 0;
+}
+
+.projects-table {
+    --bs-table-bg: transparent;
+
+    width: 100%;
+    margin: 0;
+}
+
+.projects-table thead th {
+    padding: 11px 10px;
+    color: var(--color-muted);
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.projects-table tbody td {
+    padding: 14px 10px;
+    color: var(--color-text);
+    font-size: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.projects-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.projects-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.projects-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.empty-projects {
+    height: 180px;
+    text-align: center;
+    color: var(--color-muted) !important;
+    font-size: 11px !important;
+}
+
+.empty-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.empty-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 10px;
+    border-radius: 13px;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--color-muted);
+    font-size: 15px;
+}
+
+@media (max-width: 991px) {
+    .projects-table {
+        min-width: 850px;
+    }
+}

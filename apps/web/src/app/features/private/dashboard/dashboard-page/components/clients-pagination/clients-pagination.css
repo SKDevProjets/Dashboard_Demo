@@ -1,0 +1,144 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+/* =========================================================
+   PAGINATION CONTAINER
+========================================================= */
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 4px;
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   PAGINATION INFO
+========================================================= */
+
+.pagination-info {
+  color: var(--color-muted, #81776f);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.pagination-info strong {
+  color: var(--color-text, #332e2a);
+  font-weight: 700;
+}
+
+/* =========================================================
+   PAGINATION CONTROLS
+========================================================= */
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   NAVIGATION BUTTONS
+========================================================= */
+
+.pagination-button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+
+  border: 1px solid var(--color-border, rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-text, #332e2a);
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: var(--color-white, #fff);
+
+  border-color: var(--color-accent, #c94f3d);
+  color: var(--color-accent, #c94f3d);
+
+  transform: translateY(-1px);
+}
+
+.pagination-button:focus-visible {
+  outline: 2px solid var(--color-accent, #c94f3d);
+  outline-offset: 3px;
+}
+
+.pagination-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   PAGE INDICATOR
+========================================================= */
+
+.pagination-page {
+  min-width: 65px;
+
+  color: var(--color-muted, #81776f);
+
+  font-size: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.pagination-page strong {
+  color: var(--color-text, #332e2a);
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 575px) {
+  .pagination-wrapper {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pagination-info {
+    font-size: 10px;
+  }
+
+  .pagination-controls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagination-button {
+    transition: none;
+  }
+}

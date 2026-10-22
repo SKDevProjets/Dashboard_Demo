@@ -1,0 +1,26 @@
+<div class="pagination-wrapper">
+    <div class="pagination-info">
+        Showing
+        <strong>{{ start() }}</strong> -
+        <strong>{{ end() }}</strong>
+        of
+        <strong>{{ total() }}</strong> clients
+    </div>
+
+    <div class="pagination-controls">
+        <button type="button" class="pagination-button" [disabled]="currentPage() <= 1" (click)="previous.emit()"
+            aria-label="Previous page">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <span class="pagination-page">
+            Page <strong>{{ currentPage() }}</strong> /
+            {{ totalPages() }}
+        </span>
+
+        <button type="button" class="pagination-button" [disabled]="currentPage() >= totalPages()" (click)="next.emit()"
+            aria-label="Next page">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+</div>

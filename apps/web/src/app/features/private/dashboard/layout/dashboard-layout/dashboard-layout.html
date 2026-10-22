@@ -1,0 +1,136 @@
+<div class="dashboard-shell">
+
+    @if (sidebarOpen()) {
+    <div class="sidebar-overlay" (click)="closeSidebar()"></div>
+    }
+
+    <aside class="sidebar glass" [class.sidebar-open]="sidebarOpen()">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                GS
+            </div>
+
+            <div class="brand-info">
+
+                <div class="brand-title">
+                    GENTLEMEN STUDIO
+                </div>
+
+                <div class="brand-subtitle">
+                    Business Command Center
+                </div>
+
+            </div>
+
+            <button type="button" class="mobile-close" aria-label="Close menu" (click)="closeSidebar()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+        <div class="nav-label">
+            Workspace
+        </div>
+
+        <nav class="nav-menu">
+
+            <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                class="nav-link-custom" (click)="closeSidebar()">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a routerLink="/business" routerLinkActive="active" class="nav-link-custom" (click)="closeSidebar()">
+                <i class="bi bi-briefcase-fill"></i>
+                <span>Business</span>
+            </a>
+
+            <a routerLink="/team" routerLinkActive="active" class="nav-link-custom" (click)="closeSidebar()">
+                <i class="bi bi-people-fill"></i>
+                <span>Team</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="user-box">
+
+                <div class="avatar">
+                    GS
+                </div>
+
+                <div class="user-info">
+                    <div class="user-name">
+                        Administrator
+                    </div>
+ 
+                    <div class="user-role">
+                        Studio Management
+                    </div>
+
+                </div>
+
+                <button type="button" class="logout-button" aria-label="Se déconnecter" title="Se déconnecter"
+                    (click)="logout()"> 
+                    <i class="bi bi-power" aria-hidden="true"></i>
+                </button>
+
+            </div>
+
+
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="mobile-topbar">
+
+            <button type="button" class="icon-button" aria-label="Open menu" [attr.aria-expanded]="sidebarOpen()"
+                (click)="toggleSidebar()">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="mobile-brand">
+                <strong>GENTLEMEN STUDIO</strong>
+            </div>
+
+        </div>
+
+        <header class="topbar">
+
+            <div>
+
+                <h1 class="page-title">
+                    Dashboard
+                </h1>
+
+                <p class="page-description">
+                    Overview of your business
+                </p>
+
+            </div>
+            <!-- 
+            <div class="top-actions">
+
+                <button type="button" class="icon-button" title="Notifications" aria-label="Notifications">
+                    <i class="bi bi-bell"></i>
+                </button>
+
+                <button type="button" class="icon-button" title="More" aria-label="More options">
+                    <i class="bi bi-three-dots"></i>
+                </button>
+
+            </div>
+        -->
+        </header>
+
+        <router-outlet></router-outlet>
+
+    </main>
+
+</div>

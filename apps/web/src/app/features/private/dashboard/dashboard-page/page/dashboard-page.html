@@ -1,0 +1,69 @@
+<div class="dashboard-content">
+
+  <!-- KPI -->
+  <div class="row g-3 mb-4">
+
+    <div class="col-12 col-sm-6 col-xl-3">
+      <app-dashboard-kpi title="Total Clients" [value]="totalClients()"
+        description="Clients registered in your workspace" icon="bi-people-fill" tone="clients" [loading]="isLoading()"
+        badge="Live" />
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+      <app-dashboard-kpi title="Active Clients" [value]="activeClients()" description="Currently active accounts"
+        icon="bi-person-check-fill" tone="active" [loading]="isLoading()" />
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+      <app-dashboard-kpi title="Business" value="—" description="Business overview coming soon" icon="bi-briefcase-fill"
+        tone="business" />
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-3">
+      <app-dashboard-kpi title="Team" value="—" description="Team data coming soon" icon="bi-people" tone="team" />
+    </div>
+
+  </div>
+
+  <div class="row g-3">
+
+    <!-- Clients 
+    <div class="col-12 col-xl-8"> 
+    -->
+    <div class="col-12 col-xl-12">
+      <div class="glass content-card">
+
+        <app-clients-list [clients]="paginatedClients()" [loading]="isLoading()" [error]="errorMessage()" />
+
+        @if (!isLoading() && !errorMessage()) {
+        @if (totalClients() > itemsPerPage) {
+        <app-clients-pagination [start]="paginationStart()" [end]="paginationEnd()" [total]="totalClients()"
+          [currentPage]="currentPage()" [totalPages]="totalPages()" (previous)="previousPage()" (next)="nextPage()" />
+        }
+        }
+
+      </div>
+    </div>
+
+    <!-- Workspace 
+    <div class="col-12 col-xl-4">
+      <app-dashboard-card
+        [totalClients]="totalClients()"
+        [activeClients]="activeClients()"
+      />
+    </div>
+    -->
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="dashboard-footer">
+    <span>Gentlemen Studio Dashboard</span>
+
+    <span>
+      API connected
+      <i class="bi bi-check-circle-fill"></i>
+    </span>
+  </footer>
+
+</div>

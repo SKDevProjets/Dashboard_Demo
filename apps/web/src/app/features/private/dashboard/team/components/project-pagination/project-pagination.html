@@ -1,0 +1,30 @@
+<div class="pagination-wrapper">
+    <div class="pagination-info">
+        Showing
+        <strong>{{ paginationStart() }}</strong>
+        -
+        <strong>{{ paginationEnd() }}</strong>
+        of
+        <strong>{{ totalItems() }}</strong>
+        projects
+    </div>
+
+    <nav class="pagination-controls" aria-label="Project pagination">
+        <button type="button" class="pagination-button" [disabled]="currentPage() <= 1" (click)="previousPage()"
+            aria-label="Previous page">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+
+        <span class="pagination-page" aria-live="polite">
+            Page
+            <strong>{{ currentPage() }}</strong>
+            /
+            {{ totalPages() }}
+        </span>
+
+        <button type="button" class="pagination-button" [disabled]="currentPage() >= totalPages()" (click)="nextPage()"
+            aria-label="Next page">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </nav>
+</div>

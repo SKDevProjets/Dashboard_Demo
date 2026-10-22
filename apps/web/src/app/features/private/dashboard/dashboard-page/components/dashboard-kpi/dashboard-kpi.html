@@ -1,0 +1,33 @@
+<div class="glass kpi-card">
+  <div class="kpi-top">
+    <div class="kpi-icon" [class]="
+      'kpi-icon ' + tone()
+    ">
+      <i [class]="'bi ' + icon()"></i>
+    </div>
+
+    @if (badge()) {
+      <span class="kpi-badge success">
+        {{ badge() }}
+      </span>
+    }
+  </div>
+
+  <div class="kpi-label">
+    {{ title() }}
+  </div>
+
+  @if (loading()) {
+    <div class="placeholder-glow" aria-label="Chargement">
+      <span class="placeholder col-5"></span>
+    </div>
+  } @else {
+    <div class="kpi-value">
+      {{ value() }}
+    </div>
+  }
+
+  <div class="kpi-description">
+    {{ description() }}
+  </div>
+</div>

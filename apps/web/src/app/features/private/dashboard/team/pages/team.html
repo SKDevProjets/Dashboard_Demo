@@ -1,0 +1,51 @@
+
+<div class="dashboard-content">
+  <section class="glass content-card">
+    <header class="section-heading">
+      <div>
+        <h2>Team</h2>
+        <p>Projects and team activity</p>
+      </div>
+
+      <div class="team-icon" aria-hidden="true">
+        <i class="bi bi-people"></i>
+      </div>
+    </header>
+
+    @if (loading()) {
+      <div class="loading-state" role="status">
+        <div class="spinner-border spinner-border-sm"></div>
+        <span>Loading projects...</span>
+      </div>
+    } @else if (error()) {
+      <div class="error-box" role="alert">
+        <i class="bi bi-exclamation-circle"></i>
+        <span>{{ error() }}</span>
+      </div>
+    } @else {
+      <app-project-list
+        [projects]="paginatedProjects()"
+      />
+
+      @if (projects().length > itemsPerPage) {
+        <app-project-pagination
+          [currentPage]="currentPage()"
+          [totalPages]="totalPages()"
+          [paginationStart]="paginationStart()"
+          [paginationEnd]="paginationEnd()"
+          [totalItems]="projects().length"
+          (pageChange)="onPageChange($event)"
+        />
+      }
+    }
+  </section>
+
+  <footer class="dashboard-footer">
+    <span>Gentlemen Studio Dashboard</span>
+
+    <span>
+      Projects workspace
+      <i class="bi bi-check-circle-fill"></i>
+    </span>
+  </footer>
+</div>

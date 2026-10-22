@@ -1,0 +1,31 @@
+<div class="table-responsive">
+    <table class="table projects-table align-middle">
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Client</th>
+                <th>Category</th>
+                <th>Start date</th>
+                <th>Deadline</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @for (project of projects(); track project.id) {
+            <tr app-project-card [project]="project"></tr>
+            } @empty {
+            <tr>
+                <td colspan="6" class="empty-projects">
+                    <div class="empty-content">
+                        <div class="empty-icon">
+                            <i class="bi bi-folder-x"></i>
+                        </div>
+                        <span>No projects found.</span>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

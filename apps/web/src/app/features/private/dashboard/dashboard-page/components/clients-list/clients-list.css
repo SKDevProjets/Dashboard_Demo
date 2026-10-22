@@ -1,0 +1,334 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: var(--color-text, #332e2a);
+
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.section-heading p {
+  margin: 4px 0 0;
+
+  color: var(--color-muted, #81776f);
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.view-all-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+
+  padding: 8px 11px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: rgba(201, 79, 61, 0.08);
+  color: var(--color-accent, #c94f3d);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.view-all-button:hover {
+  background: rgba(201, 79, 61, 0.14);
+  transform: translateY(-1px);
+}
+
+.view-all-button:focus-visible {
+  outline: 2px solid var(--color-accent, #c94f3d);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.clients-table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--color-text, #332e2a);
+  --bs-table-border-color: rgba(0, 0, 0, 0.05);
+  --bs-table-hover-bg: transparent;
+
+  width: 100%;
+  margin: 0;
+}
+
+.clients-table thead th {
+  padding: 11px 10px;
+
+  color: var(--color-muted, #81776f);
+
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.clients-table tbody td {
+  padding: 14px 10px;
+
+  color: var(--color-text, #332e2a);
+
+  font-size: 12px;
+  vertical-align: middle;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.clients-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.clients-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.clients-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================================================
+   CLIENT CELL
+========================================================= */
+
+.client-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 150px;
+}
+
+.client-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 11px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(201, 79, 61, 0.15),
+    rgba(201, 79, 61, 0.05)
+  );
+
+  color: var(--color-accent, #c94f3d);
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.client-name {
+  color: var(--color-text, #332e2a);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  overflow-wrap: anywhere;
+}
+
+.client-company {
+  margin-top: 3px;
+
+  color: var(--color-muted, #81776f);
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   EMAIL AND ID
+========================================================= */
+
+.client-email {
+  color: #655e58;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.client-id {
+  color: var(--color-muted, #81776f);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.muted {
+  color: var(--color-placeholder, #a39a92);
+  font-size: 11px;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border-radius: 50px;
+
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+.status-green {
+  color: #287c58;
+  background: rgba(67, 168, 121, 0.12);
+}
+
+.status-red {
+  color: #b83c49;
+  background: rgba(220, 92, 104, 0.12);
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 200px;
+  padding: 24px;
+
+  color: var(--color-muted, #81776f);
+  font-size: 12px;
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 13px;
+
+  border: 1px solid rgba(220, 92, 104, 0.12);
+  border-radius: 14px;
+
+  color: #b83c49;
+  background: rgba(220, 92, 104, 0.08);
+
+  font-size: 11px;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+.error-box i {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.clients-table td.text-center {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .section-heading h2 {
+    font-size: 15px;
+  }
+
+  .view-all-button {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .clients-table {
+    min-width: 620px;
+  }
+
+  .clients-table thead th {
+    padding: 11px 8px;
+  }
+
+  .clients-table tbody td {
+    padding: 12px 8px;
+  }
+
+  .section-heading {
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-table tbody tr,
+  .view-all-button {
+    transition: none;
+  }
+}

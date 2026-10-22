@@ -1,0 +1,65 @@
+<td>
+  <div class="project-cell">
+    <div class="project-avatar">
+      <i class="bi bi-folder"></i>
+    </div>
+
+    <div class="project-details">
+      <div class="project-name">
+        {{ project().project_name }}
+      </div>
+
+      @if (project().project_summary) {
+        <div
+          class="project-summary"
+          [title]="project().project_summary"
+        >
+          {{ project().project_summary }}
+        </div>
+      }
+    </div>
+  </div>
+</td>
+
+<td>
+  @if (project().client?.name) {
+    <span class="client-name">{{ project().client?.name }}</span>
+  } @else {
+    <span class="muted">—</span>
+  }
+</td>
+
+<td>
+  @if (project().category?.category_name) {
+    <span class="category">{{ project().category?.category_name }}</span>
+  } @else {
+    <span class="muted">—</span>
+  }
+</td>
+
+<td>
+  @if (project().start_date) {
+    <span class="date">
+      {{ project().start_date | date:'dd/MM/yyyy' }}
+    </span>
+  } @else {
+    <span class="muted">—</span>
+  }
+</td>
+
+<td>
+  @if (project().deadline) {
+    <span class="date">
+      {{ project().deadline | date:'dd/MM/yyyy' }}
+    </span>
+  } @else {
+    <span class="muted">—</span>
+  }
+</td>
+
+<td>
+  <span class="status" [class]="statusClass()">
+    <span class="status-dot"></span>
+    {{ project().status || 'Unknown' }}
+  </span>
+</td>

@@ -1,0 +1,93 @@
+<div class="glass content-card">
+
+  <div class="section-heading">
+    <div>
+      <h2>Clients</h2>
+      <p>Your latest client accounts</p>
+    </div>
+
+    <button type="button" class="view-all-button">
+      View all
+      <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+
+  @if (error()) {
+    <div class="error-box" role="alert">
+      <i class="bi bi-exclamation-circle"></i>
+      <span>{{ error() }}</span>
+    </div>
+  } @else if (loading()) {
+    <div class="loading-state" role="status">
+      <span class="spinner-border spinner-border-sm"></span>
+      <span>Loading clients...</span>
+    </div>
+  } @else {
+    <div class="table-responsive">
+      <table class="table clients-table align-middle">
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th class="text-end">ID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (client of clients(); track client.id) {
+            <tr>
+              <td>
+                <div class="client-cell">
+                  <div class="client-avatar">
+                    {{ getInitials(client.name) }}
+                  </div>
+
+                  <div>
+                    <div class="client-name">
+                      {{ client.name }}
+                    </div>
+                    <div class="client-company">
+                      Client #{{ client.id }}
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                @if (client.email) {
+                  <span class="client-email">
+                    {{ client.email }}
+                  </span>
+                } @else {
+                  <span class="muted">No email</span>
+                }
+              </td>
+
+              <td>
+                <span
+                  class="status"
+                  [class.status-green]="client.status === 'active'"
+                  [class.status-red]="client.status !== 'active'"
+                >
+                  <span class="status-dot"></span>
+                  {{ client.status === 'active' ? 'Active' : client.status }}
+                </span>
+              </td>
+
+              <td class="text-end">
+                <span class="client-id">#{{ client.id }}</span>
+              </td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="4" class="text-center py-4">
+                <span class="muted">No clients found.</span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
