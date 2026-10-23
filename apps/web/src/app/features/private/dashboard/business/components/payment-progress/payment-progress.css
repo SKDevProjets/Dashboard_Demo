@@ -1,0 +1,59 @@
+.payment-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.payment-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.payment-heading h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.payment-heading p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.payment-heading strong {
+  color: #15803d;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.progress-track {
+  height: 10px;
+  margin-top: 22px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #16a34a;
+  transition: width 400ms ease;
+}
+
+.progress-caption {
+  margin: 10px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+@media (max-width: 520px) {
+  .payment-card {
+    padding: 16px;
+  }
+}

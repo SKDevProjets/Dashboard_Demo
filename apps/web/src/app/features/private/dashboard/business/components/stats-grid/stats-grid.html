@@ -1,0 +1,37 @@
+<div class="stats-grid">
+  <article class="stat-card">
+    <div class="stat-top">
+      <span class="stat-label">Paid invoices</span>
+      <span class="stat-icon paid-icon">✓</span>
+    </div>
+    <strong class="stat-value">{{ stats().paid }}</strong>
+    <span class="stat-caption">Successfully paid</span>
+  </article>
+
+  <article class="stat-card">
+    <div class="stat-top">
+      <span class="stat-label">Unpaid invoices</span>
+      <span class="stat-icon unpaid-icon">◷</span>
+    </div>
+    <strong class="stat-value">{{ stats().unpaid }}</strong>
+    <span class="stat-caption">Awaiting payment</span>
+  </article>
+
+  <article class="stat-card">
+    <div class="stat-top">
+      <span class="stat-label">Overdue invoices</span>
+      <span class="stat-icon overdue-icon">!</span>
+    </div>
+    <strong class="stat-value">{{ stats().overdue }}</strong>
+    <span class="stat-caption">Past due</span>
+  </article>
+
+  <article class="stat-card">
+    <div class="stat-top">
+      <span class="stat-label">Total invoices</span>
+      <span class="stat-icon total-icon">▤</span>
+    </div>
+    <strong class="stat-value">{{ stats().total }}</strong>
+    <span class="stat-caption">All invoices</span>
+  </article>
+</div>

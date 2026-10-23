@@ -1,0 +1,42 @@
+<div class="charts-grid">
+  <article class="chart-card">
+    <div class="chart-header">
+      <div>
+        <h3>Invoice distribution</h3>
+        <p>Breakdown by payment status</p>
+      </div>
+    </div>
+
+    <div class="chart-container doughnut-container">
+      <canvas
+        baseChart
+        [type]="'doughnut'"
+        [data]="doughnutData"
+        [options]="doughnutOptions">
+      </canvas>
+    </div>
+
+    <div class="chart-summary">
+      <span>Total invoices</span>
+      <strong>{{ stats().total }}</strong>
+    </div>
+  </article>
+
+  <article class="chart-card">
+    <div class="chart-header">
+      <div>
+        <h3>Payment status</h3>
+        <p>Number of invoices per category</p>
+      </div>
+    </div>
+
+    <div class="chart-container bar-container">
+      <canvas
+        baseChart
+        [type]="'bar'"
+        [data]="barData"
+        [options]="barOptions">
+      </canvas>
+    </div>
+  </article>
+</div>

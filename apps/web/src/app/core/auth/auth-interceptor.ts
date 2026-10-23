@@ -4,7 +4,6 @@ import { AuthService } from './auth.service';
 import { environment } from '@config/environment.development';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-
   const authService = inject(AuthService);
   const isApiRequest = req.url.startsWith(environment.apiUrl);
 
@@ -13,17 +12,11 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     'XMLHttpRequest',
   );
 
-  const token = authService.token();
+  const token = authService.getValidToken();
 
   if (isApiRequest && token) {
     headers = headers.set('Authorization', `Bearer ${token}`);
   }
-
-  console.log('[AuthInterceptor]', {
-    url: req.url,
-    isApiRequest,
-    hasToken: !!token,
-  });
 
   return next(req.clone({ headers }));
 };

@@ -29,11 +29,14 @@ export class DashboardLayout {
   logout(): void {
     this.authService.logout().subscribe({
       next: () => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login'], {
+          replaceUrl: true,
+        });
       },
       error: () => {
-        this.authService.clearSession();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login'], {
+          replaceUrl: true,
+        });
       },
     });
   }

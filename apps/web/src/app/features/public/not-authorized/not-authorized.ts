@@ -7,8 +7,8 @@ import { ErrorPage } from '@shared/ui/error-page';
   template: `
     <app-error-page
       code="403"
-      title="Accès refusé"
-      message="Vous n'avez pas les droits."
+      title="Access denied"
+      message="You do not have the necessary permissions"
       icon="compass"
       color="danger"
     />

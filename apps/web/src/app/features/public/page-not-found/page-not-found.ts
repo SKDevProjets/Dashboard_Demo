@@ -7,8 +7,8 @@ import { ErrorPage } from '@shared/ui/error-page';
   template: `
     <app-error-page
       code="404"
-      title="Page introuvable"
-      message="La page que vous recherchez n'existe pas ou a été déplacée."
+      title="Page not found"
+      message="The page you are looking for does not exist or has been moved"
       icon="compass"
       color="warning"
     />

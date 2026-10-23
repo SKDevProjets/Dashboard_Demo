@@ -25,7 +25,7 @@ import { RouterLink } from "@angular/router";
             {{ message() }}
           </p>
 
-          <a class="btn text-white" [class]="'btn btn-' + color()" routerLink="/"> Accueil </a>
+          <a class="btn text-white" [class]="'btn btn-' + color()" routerLink="/"> Back to Home </a>
         </div>
       </div>
     </div>

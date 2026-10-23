@@ -1,0 +1,28 @@
+<article class="payment-card">
+  <div class="payment-heading">
+    <div>
+      <h3>Payment completion</h3>
+      <p>Share of invoices marked as paid</p>
+    </div>
+
+    <strong>{{ percentage | number:'1.0-1' }}%</strong>
+  </div>
+
+  <div
+    class="progress-track"
+    role="progressbar"
+    aria-label="Payment completion"
+    [attr.aria-valuenow]="percentage"
+    aria-valuemin="0"
+    aria-valuemax="100">
+
+    <div
+      class="progress-fill"
+      [style.width.%]="percentage">
+    </div>
+  </div>
+
+  <p class="progress-caption">
+    {{ stats().paid }} paid out of {{ stats().total }} invoices
+  </p>
+</article>

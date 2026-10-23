@@ -7,8 +7,8 @@ import { ErrorPage } from '@shared/ui/error-page';
   template: `
     <app-error-page
       code="401"
-      title="Accès refusé"
-      message="Session expiré veuillez vous reconnecter."
+      title="Access denied"
+      message="Session expired please log in again"
       icon="compass"
       color="warning"
     />

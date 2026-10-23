@@ -1,0 +1,102 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.stat-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 10px;
+  font-size: 19px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.paid-icon {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.unpaid-icon {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.overdue-icon {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.total-icon {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.stat-value {
+  display: block;
+  margin-top: 18px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.stat-caption {
+  display: block;
+  margin-top: 5px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .stats-grid {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .stat-value {
+    font-size: 27px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .stat-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
