@@ -1,4 +1,5 @@
-# Angular specific
+
+# Angular build artefacts
 /dist/
 /out-tsc/
 /tmp/
@@ -6,21 +7,49 @@
 /e2e/test-output/
 /.angular/
 .angular/
-
-# Node modules and dependency files
-**/node_modules/
-/package-lock.json
-/yarn.lock
-
-# Environment files
-**/.env
-**/.env.local
-**/environment.development.ts
-**/environment.ts
-
-# Angular CLI and build artefacts
-/.angular-cli.json
+.angular-cli.json
 /.ng/
+
+# Node modules
+**/node_modules/
+
+# Lock files 
+# /package-lock.json
+# /yarn.lock
+
+# Environment variables
+**/.env
+**/.env.*
+!**/.env.example
+
+# Angular environment files (si tu veux les garder privés)
+**/environment.ts
+**/environment.development.ts
+**/environment.production.ts
+
+# Firebase configuration and credentials
+**/serviceAccountKey.json
+**/service-account*.json
+**/firebase-adminsdk-*.json
+**/*firebase-adminsdk*.json
+**/firebase-service-account*.json
+**/google-credentials*.json
+**/application_default_credentials.json
+**/firebase.json
+**/.firebaserc
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Firebase local configuration
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+database-debug.log*
 
 # TypeScript cache
 *.tsbuildinfo
